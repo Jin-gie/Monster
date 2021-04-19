@@ -1,4 +1,5 @@
 import * as actions from "./actions.js";
+import * as ui from "./ui.js";
 
 let run = document.getElementById("b2");
 let fight = document.getElementById("b3");
@@ -17,4 +18,5 @@ let kill = document.getElementById("k");
  export function start() {
     actions.init("Mons'", 100, 100, true);
     show.addEventListener("click", actions.showMe);
+    ui.displayStatus();
 }
