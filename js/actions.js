@@ -5,6 +5,14 @@ let life;
 let money;
 let awake;
 
+let lactions = [
+    () => { run()   }, 
+    () => { fight() }, 
+    () => { work()  }, 
+    () => { eat()   }, 
+    () => { sleep() }
+];
+
 /**
  * Getter function for the monster
  * @returns objet with monster attributes
@@ -103,13 +111,38 @@ let awake;
  * during this time none of the other activities can be done
  */
  export function sleep() {
-    awake = false;
-    log(`${name} is sleeping`);
-    displayStatus();
-    setTimeout(() => {
-        awake = true;
-        life++;
-        log(`${name} is awake`);
+    if (awake) {
+        awake = false;
+        log(`${name} is sleeping`);
         displayStatus();
-    }, 1000 * 10);
+        setTimeout(() => {
+            awake = true;
+            life++;
+            log(`${name} is awake`);
+            displayStatus();
+        }, 1000 * 10);
+    }
+    else
+        log(`${name} cannot sleep, it's already dead`);
+}
+
+/**
+ * Choose a random activity among all activities listed in lactions
+ * and -1 hp
+ */
+ export function random() {
+    if (life > 0)
+        life--;
+    lactions[Math.round(Math.random() * (lactions.length - 1))]();
+    displayStatus();
+}
+
+/**
+ * Kills the monster
+ */
+export function killMe() {
+    life = 0;
+    awake = false;
+    log(`${name} was killed by a superior entity`);
+    displayStatus();
 }

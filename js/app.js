@@ -23,5 +23,10 @@ let kill = document.getElementById("k");
     work.addEventListener("click", actions.work);
     eat.addEventListener("click", actions.eat);
     sleep.addEventListener("click", actions.sleep);
+    newLife.addEventListener("click", start);
+    kill.addEventListener("click", actions.killMe);
     ui.displayStatus();
 }
+
+//Every 12 seconds excecute a random activity
+setInterval(actions.random, 1000 * 12);
