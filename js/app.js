@@ -13,10 +13,15 @@ let kill = document.getElementById("k");
 
 /**
  * Starts the application by initializing a monster
- * and declare a handler for "showme" button
+ * and declare a handler the buttons
  */
  export function start() {
     actions.init("Mons'", 100, 100, true);
     show.addEventListener("click", actions.showMe);
+    run.addEventListener("click", actions.run);
+    fight.addEventListener("click", actions.fight);
+    work.addEventListener("click", actions.work);
+    eat.addEventListener("click", actions.eat);
+    sleep.addEventListener("click", actions.sleep);
     ui.displayStatus();
 }
