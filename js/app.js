@@ -10,6 +10,8 @@ let show = document.getElementById("b6");
 let newLife = document.getElementById("b1");
 let kill = document.getElementById("k");
 
+let timerUpInterval;
+
 
 /**
  * Starts the application by initializing a monster
@@ -34,4 +36,11 @@ setInterval(actions.random, 1000 * 12);
 
 
 // Update alive time
-setInterval(ui.updateAlive, 1000);
+timerUpInterval = setInterval(() => {
+    if (!actions.get().dead)
+        ui.updateAlive();
+    else {
+        ui.displayDead();
+        clearInterval(timerUpInterval);
+    }
+}, 1000);

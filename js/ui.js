@@ -37,15 +37,12 @@ export function displayStatus() {
     // Change color of the monster according to life
     if (m.life < 1)
         mEl.style.backgroundImage = "url('images/monster_5.png')";
-    else if (m.life < 10) {
+    else if (m.life < 10)
         mEl.style.backgroundImage = "url('images/monster_4.png')";
-    }
     else if (m.life < 25)
         mEl.style.backgroundImage = "url('images/monster_3.png')";
     else if (m.life < 50)
-        {
             mEl.style.backgroundImage = "url('images/monster_2.png')";
-        }
     else
         mEl.style.backgroundImage = "url('images/monster_1.png')";
 
@@ -63,6 +60,17 @@ export function updateAlive() {
     let mins = formatDate(Math.floor(totSecs / 60) % 60);
     let hrs = formatDate(Math.floor(totSecs / 3600) % 60);
     let secs = formatDate(Math.floor(totSecs) % 60);
-    let p = document.getElementById("log-alive");
-    p.innerHTML = `Alive for ${hrs}h ${mins}min ${secs}s`;
+    
+    document.getElementById("hr").innerHTML = hrs;
+    document.getElementById("min").innerHTML = mins;
+    document.getElementById("s").innerHTML = secs;
+
+    // p.innerHTML = `Alive for ${hrs}h ${mins}min ${secs}s`;
+}
+
+export function displayDead() {
+    let h = document.getElementById("hr").innerHTML;
+    let m = document.getElementById("min").innerHTML;
+    let s = document.getElementById("s").innerHTML;
+    document.getElementById("log-alive").innerHTML = `Was alive for ${h}h ${m}min ${s}s`;
 }
