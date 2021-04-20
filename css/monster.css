@@ -5,9 +5,9 @@
 }
 
 body {
-    background-image: url("../images/landscape.jpg");
+    background-image: url("../images/landscape.png");
     background-size: cover;
-    background-position: bottom;
+    background-position: center;
     min-height: 100vh;
     font-family: "Poppins", sans-serif;
     margin: 0;
@@ -22,7 +22,7 @@ h1 {
 
 #container {
     position: absolute;
-    bottom: 20%;
+    bottom: 10%;
     width: 100vw;
     display: grid;
     grid-template-columns: 2fr .5fr 400px .5fr 2fr;

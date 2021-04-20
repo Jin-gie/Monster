@@ -79,13 +79,6 @@ export function updateAlive() {
     // p.innerHTML = `Alive for ${hrs}h ${mins}min ${secs}s`;
 }
 
-export function displayDead() {
-    let h = document.getElementById("hr").innerHTML;
-    let m = document.getElementById("min").innerHTML;
-    let s = document.getElementById("s").innerHTML;
-    document.getElementById("log-alive").innerHTML = `Was alive for ${h}h ${m}min ${s}s`;
-}
-
 export function clearLogContent() {
     document.getElementById("actionbox").innerHTML = '';
 }

@@ -11,6 +11,7 @@ let newLife = document.getElementById("b1");
 let kill = document.getElementById("k");
 
 let timerUpInterval;
+let audio = new Audio('sounds/ThemeTomate.mp3');
 
 
 /**
@@ -30,6 +31,9 @@ let timerUpInterval;
     newLife.addEventListener("click", start);
     kill.addEventListener("click", actions.killMe);
     ui.displayStatus();
+
+    audio.loop = true;
+    audio.play();
 }
 
 //Every 12 seconds excecute a random activity
@@ -40,8 +44,4 @@ setInterval(actions.random, 1000 * 12);
 timerUpInterval = setInterval(() => {
     if (!actions.get().dead)
         ui.updateAlive();
-    else {
-        ui.displayDead();
-        clearInterval(timerUpInterval);
-    }
 }, 1000);
