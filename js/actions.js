@@ -77,6 +77,7 @@ let lactions = [
  */
  export function fight() {
     if (!dead) {
+        isDead();
         if (life >= 3 && awake) {
             life -= 3;
             log(`${name} fought and lost 3hp`);

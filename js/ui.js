@@ -35,14 +35,19 @@ export function displayStatus() {
 
     let mEl = document.getElementById("monster");
     // Change color of the monster according to life
-    if (m.life < 10)
-        mEl.style.backgroundColor = "red";
+    if (m.life < 1)
+        mEl.style.backgroundImage = "url('images/monster_5.png')";
+    else if (m.life < 10) {
+        mEl.style.backgroundImage = "url('images/monster_4.png')";
+    }
     else if (m.life < 25)
-    mEl.style.backgroundColor = "orange";
+        mEl.style.backgroundImage = "url('images/monster_3.png')";
     else if (m.life < 50)
-    mEl.style.backgroundColor = "lightblue";
-    else 
-    mEl.style.backgroundColor = "lightgreen";
+        {
+            mEl.style.backgroundImage = "url('images/monster_2.png')";
+        }
+    else
+        mEl.style.backgroundImage = "url('images/monster_1.png')";
 
     // Change border width according to money
     let width = m.money * .5;
