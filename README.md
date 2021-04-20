@@ -2,7 +2,7 @@
 
 This project was made for the JS module at the IUT Nancy-Charlemagne (2021).
 
-![alt text](https://zupimages.net/up/21/16/rnqq.png "Global interface of the game")
+![alt text](https://zupimages.net/up/21/16/b13m.png "Global interface of the game")
 
 The goal of the monster project was to develop a simulator of the life of a monster with several possible actions:
 * Run: the monster goes for a run and loses hp
