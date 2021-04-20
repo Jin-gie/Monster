@@ -8,26 +8,41 @@
 <body>
 <h1>the life and death a po' Monster</h1>
 <br>
-<div id="monster" class="monster"><p>Monster</p></div>
-<div id="actionbox" class="monster">
-   <p>monster life log</p>
+<div id="container">
+    <div id="c-monster">
+        <ul id="status">
+            <li>life: 0</li><li>money: 0</li><li>awake</li>
+        </ul>
 
+        <div id="monster" class="monster">
+            <p>Monster</p>
+        </div>
+    </div>
+
+
+
+    <div id="actionbox" class="monster">
+       <p>monster life log</p>
+    
+    </div>
+    
+    <div id="c-buttons-actions">
+        <button id="b2">run</button>
+        <button id="b3">fight</button>
+        <button id="b7">work</button>
+        <button id="b4">sleep</button>
+        <button id="b5">eat</button>
+        <button id="b6">show</button>
+    </div>
+    
+    <div id="c-buttons-general">
+        <button id="b1">new life</button>
+        <button id="k">kill</button>
+    </div>
 </div>
-<ul id="status">
-    <li>life:0</li><li>money:0</li><li>awake</li>
-</ul>
-<hr>
 
-<button id="b2">run</button>
-<button id="b3">fight</button>
-<button id="b7">work</button>
-<button id="b4">sleep</button>
-<button id="b5">eat</button>
-<button id="b6">show</button>
-
-<hr>
-
-<button id="b1">new life</button><button id="k">kill</button>
+<div id="footer"><a href="https://github.com/Jin-gie">Erin B.</a> ~ 2021</div>
+<a id="citation" href='https://www.freepik.com/vectors/forest'>Forest vector created by freepik - www.freepik.com</a>
 
 
 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
