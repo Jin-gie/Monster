@@ -36,8 +36,7 @@ h1 {
     display: inline-block;
     vertical-align: top;
     height: 200px;
-    margin-left: 50px;
-
+    
 }
 
 #c-monster {
@@ -52,8 +51,16 @@ h1 {
     text-align: center;
 }
 
-#actionbox {
+#log {
     grid-area: log;
+    margin-left: 50px;
+}
+
+#log-alive {
+    margin-top: .7rem;
+}
+
+#actionbox {
     justify-self: start;
     align-self: center;
     background-color: rgba(134, 151, 161, .8);

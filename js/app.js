@@ -31,3 +31,7 @@ let kill = document.getElementById("k");
 
 //Every 12 seconds excecute a random activity
 setInterval(actions.random, 1000 * 12);
+
+
+// Update alive time
+setInterval(ui.updateAlive, 1000);

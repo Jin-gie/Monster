@@ -5,6 +5,7 @@ let life;
 let money;
 let awake;
 let dead;
+let birth;
 
 let lactions = [
     () => { run()   }, 
@@ -23,7 +24,9 @@ let lactions = [
         name: name,
         life: life,
         money: money,
-        awake: awake
+        awake: awake,
+        dead: dead,
+        birth: birth
     };
 }
 
@@ -40,6 +43,8 @@ let lactions = [
     money = m;
     awake = a;
     dead = false;
+    birth = new Date();
+    log(`${name} appeared!`);
 }
 
 /**

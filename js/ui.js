@@ -48,3 +48,16 @@ export function displayStatus() {
     let width = m.money * .5;
     mEl.style.border = `${width}px solid black`;
 }
+
+/**
+ * Update the time since when the monster is alive
+ */
+export function updateAlive() {
+    let m = get();
+    let totSecs = (new Date() - m.birth) / 1000;
+    let mins = formatDate(Math.floor(totSecs / 60) % 60);
+    let hrs = formatDate(Math.floor(totSecs / 3600) % 60);
+    let secs = formatDate(Math.floor(totSecs) % 60);
+    let p = document.getElementById("log-alive");
+    p.innerHTML = `Alive for ${hrs}h ${mins}min ${secs}s`;
+}
