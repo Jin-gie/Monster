@@ -22,4 +22,19 @@ export function displayStatus() {
     i[0].innerHTML = `life: ${m.life}`;
     i[1].innerHTML = `money: ${m.money}`;
     i[2].innerHTML = (m.awake) ? "awake" : "asleep";
+
+    let mEl = document.getElementById("monster");
+    // Change color of the monster according to life
+    if (m.life < 10)
+        mEl.style.backgroundColor = "red";
+    else if (m.life < 25)
+    mEl.style.backgroundColor = "orange";
+    else if (m.life < 50)
+    mEl.style.backgroundColor = "lightblue";
+    else 
+    mEl.style.backgroundColor = "lightgreen";
+
+    // Change border width according to money
+    let width = m.money * .5;
+    mEl.style.border = `${width}px solid black`;
 }

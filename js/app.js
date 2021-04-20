@@ -16,7 +16,8 @@ let kill = document.getElementById("k");
  * and declare a handler the buttons
  */
  export function start() {
-    actions.init("Mons'", 100, 100, true);
+    actions.init("Mons'", 100, 10, true);
+
     show.addEventListener("click", actions.showMe);
     run.addEventListener("click", actions.run);
     fight.addEventListener("click", actions.fight);
