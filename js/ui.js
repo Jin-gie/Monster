@@ -6,9 +6,19 @@ import {get} from "./actions.js";
  * @param {log message to be displayed} message 
  */
 export function log(message) {
+    let now = new Date();
     let p = document.createElement("p");
-    p.appendChild(document.createTextNode(message));
+    p.appendChild(document.createTextNode(`[${formatDate(now.getHours())}:${formatDate(now.getMinutes())}:${formatDate(now.getSeconds())}] ${message}`));
     document.getElementById("actionbox").prepend(p); // add it at the top of the box
+}
+
+/**
+ * Format a part of the date by adding a 0 if < 10
+ * @param {part of date to be formated} date 
+ * @returns formatted date (ex : 13 or 03)
+ */
+function formatDate(date) {
+    return (date < 10 ? `0${date}` : date);
 }
 
 /**

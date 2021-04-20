@@ -4,6 +4,7 @@ let name;
 let life;
 let money;
 let awake;
+let dead;
 
 let lactions = [
     () => { run()   }, 
@@ -38,6 +39,7 @@ let lactions = [
     life = l;
     money = m;
     awake = a;
+    dead = false;
 }
 
 /**
@@ -53,13 +55,15 @@ let lactions = [
  * -1 hp
  */
  export function run() {
-    if (life >= 1 && awake) {
-        life--;
-        log(`${name} did a nice run`);
-        displayStatus();
-        isDead();
-    } else
-        log(`${name} cannot run`);
+    if (!dead) {
+        if (life >= 1 && awake) {
+            life--;
+            log(`${name} did a nice run`);
+            displayStatus();
+            isDead();
+        } else
+            log(`${name} cannot run`);
+    }
 }
 
 /**
@@ -67,13 +71,15 @@ let lactions = [
  * -3 hp
  */
  export function fight() {
-    if (life >= 3 && awake) {
-        life -= 3;
-        log(`${name} fought and lost 3hp`);
-        displayStatus();
-        isDead();
-    } else
-        log(`${name} cannot fight`);
+    if (!dead) {
+        if (life >= 3 && awake) {
+            life -= 3;
+            log(`${name} fought and lost 3hp`);
+            displayStatus();
+            isDead();
+        } else
+            log(`${name} cannot fight`);
+    }
 }
 
 
@@ -83,14 +89,16 @@ let lactions = [
  * +2 money
  */
  export function work() {
-    if (life >= 1 && awake) {
-        life--;
-        money += 2;
-        log(`${name} worked hard and earned 2 coins`);
-        displayStatus();
-        isDead();
-    } else
-        log(`${name} cannot work`);
+    if (!dead) {
+        if (life >= 1 && awake) {
+            life--;
+            money += 2;
+            log(`${name} worked hard and earned 2 coins`);
+            displayStatus();
+            isDead();
+        } else
+            log(`${name} cannot work`);
+    }
 }
 
 /**
@@ -99,13 +107,15 @@ let lactions = [
  * +2 hp
  */
  export function eat() {
-    if (money >= 3 && awake) {
-        money -= 3;
-        life += 2;
-        log(`${name} ate a gained 2 hp`);
-        displayStatus();
-    } else
-        log(`${name} cannot eat`);
+    if (!dead) {
+        if (money >= 3 && awake) {
+            money -= 3;
+            life += 2;
+            log(`${name} ate a gained 2 hp`);
+            displayStatus();
+        } else
+            log(`${name} cannot eat`);
+    }
 }
 
 /**
@@ -114,7 +124,7 @@ let lactions = [
  * during this time none of the other activities can be done
  */
  export function sleep() {
-    if (awake) {
+    if (!dead) {
         awake = false;
         log(`${name} is sleeping`);
         displayStatus();
@@ -125,8 +135,6 @@ let lactions = [
             displayStatus();
         }, 1000 * 10);
     }
-    else
-        log(`${name} cannot sleep, it's already dead`);
 }
 
 /**
@@ -146,6 +154,7 @@ let lactions = [
 export function killMe() {
     life = 0;
     awake = false;
+    dead = true;
     log(`${name} was killed by a superior entity`);
     displayStatus();
 }
@@ -156,6 +165,7 @@ export function killMe() {
 function isDead() {
     if (life == 0) {
         awake = false;
+        dead = true;
         log(`Poor ${name} is dead :'(`);
     }
 }
