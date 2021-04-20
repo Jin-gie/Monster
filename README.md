@@ -2,7 +2,7 @@
 
 This project was made for the JS module at the IUT Nancy-Charlemagne (2021).
 
-![alt text](https://zupimages.net/up/21/16/b13m.png "Global interface of the game")
+![alt text](https://zupimages.net/up/21/16/u8fb.png "Global interface of the game")
 
 The goal of the monster project was to develop a simulator of the life of a monster with several possible actions:
 * Run: the monster goes for a run and loses hp
@@ -12,5 +12,7 @@ The goal of the monster project was to develop a simulator of the life of a mons
 * Eat: the monsters gains hp against a bit of money
 
 At a given interval of time, a random action among those above is activated.
+
+When the monster earn more than 60 coins, the color of the border changes to avoid a too large border.
 
 It is also possible to restart the game with a new life and to kill the monster. The actions of the monster are registered in a log window.
