@@ -47,8 +47,19 @@ export function displayStatus() {
         mEl.style.backgroundImage = "url('images/monster_1.png')";
 
     // Change border width according to money
-    let width = m.money * .5;
-    mEl.style.border = `${width}px solid black`;
+    let maxB = 30;
+    if (m.money < 61) {
+        let width = m.money * .5;
+        mEl.style.border = `${width}px solid black`;
+    }
+    else if (m.money < 100)
+        mEl.style.border = `${maxB}px solid #95CD5E`;
+    else if (m.money < 150)
+        mEl.style.border = `${maxB}px solid #C0C0C0`;
+    else if (m.money < 200)
+        mEl.style.border = `${maxB}px solid #FFD700`;
+    else
+        mEl.style.border = `${maxB}px solid #B9F2FF`;
 }
 
 /**
