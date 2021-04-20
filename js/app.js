@@ -18,6 +18,7 @@ let timerUpInterval;
  * and declare a handler the buttons
  */
  export function start() {
+    ui.clearLogContent();
     actions.init("Mons'", 100, 10, true);
 
     show.addEventListener("click", actions.showMe);

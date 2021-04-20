@@ -74,3 +74,7 @@ export function displayDead() {
     let s = document.getElementById("s").innerHTML;
     document.getElementById("log-alive").innerHTML = `Was alive for ${h}h ${m}min ${s}s`;
 }
+
+export function clearLogContent() {
+    document.getElementById("actionbox").innerHTML = '';
+}
