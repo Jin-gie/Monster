@@ -57,6 +57,7 @@ let lactions = [
         life--;
         log(`${name} did a nice run`);
         displayStatus();
+        isDead();
     } else
         log(`${name} cannot run`);
 }
@@ -70,6 +71,7 @@ let lactions = [
         life -= 3;
         log(`${name} fought and lost 3hp`);
         displayStatus();
+        isDead();
     } else
         log(`${name} cannot fight`);
 }
@@ -86,6 +88,7 @@ let lactions = [
         money += 2;
         log(`${name} worked hard and earned 2 coins`);
         displayStatus();
+        isDead();
     } else
         log(`${name} cannot work`);
 }
@@ -145,4 +148,14 @@ export function killMe() {
     awake = false;
     log(`${name} was killed by a superior entity`);
     displayStatus();
+}
+
+/**
+ * If the life of the monster is at 0, take it as dead
+ */
+function isDead() {
+    if (life == 0) {
+        awake = false;
+        log(`Poor ${name} is dead :'(`);
+    }
 }
