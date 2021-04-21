@@ -60,6 +60,7 @@ export function displayStatus() {
         mEl.style.border = `${maxB}px solid #FFD700`;
     else
         mEl.style.border = `${maxB}px solid #B9F2FF`;
+
 }
 
 /**
@@ -81,4 +82,14 @@ export function updateAlive() {
 
 export function clearLogContent() {
     document.getElementById("actionbox").innerHTML = '';
+}
+
+export function disableButtons() {
+    let btns = document.querySelectorAll(".action");
+    btns.forEach((e) => e.classList.add("button-disabled"));
+}
+
+export function enableButtons(params) {
+    let btns = document.querySelectorAll(".action");
+    btns.forEach((e) => e.classList.remove("button-disabled"));
 }

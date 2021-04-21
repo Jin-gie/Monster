@@ -109,6 +109,11 @@ button {
     font-size: 1rem;
 }
 
+.button-disabled {
+    background-color: rgb(134, 151, 161);
+    cursor: not-allowed;
+}
+
 #c-buttons-general > button {
     display: block;
     margin-top: 1rem;

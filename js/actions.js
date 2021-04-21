@@ -1,4 +1,4 @@
-import {log, displayStatus} from "./ui.js";
+import {log, displayStatus, disableButtons, enableButtons} from "./ui.js";
 
 let name;
 let life;
@@ -44,6 +44,7 @@ let lactions = [
     awake = a;
     dead = false;
     birth = new Date();
+    enableButtons();
     log(`${name} appeared!`);
 }
 
@@ -163,15 +164,17 @@ export function killMe() {
     dead = true;
     log(`${name} was killed by a superior entity`);
     displayStatus();
+    isDead();
 }
 
 /**
  * If the life of the monster is at 0, take it as dead
  */
 function isDead() {
-    if (life == 0) {
+    if (life === 0) {
         awake = false;
         dead = true;
         log(`Poor ${name} is dead :'(`);
+        disableButtons();
     }
 }

@@ -32,8 +32,8 @@ let audio = new Audio('sounds/ThemeTomate.mp3');
     kill.addEventListener("click", actions.killMe);
     ui.displayStatus();
 
-    audio.loop = true;
-    audio.play();
+    // audio.loop = true;
+    // audio.play();
 }
 
 //Every 12 seconds excecute a random activity
