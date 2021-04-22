@@ -9,6 +9,8 @@ let eat = document.getElementById("b5");
 let show = document.getElementById("b6");
 let newLife = document.getElementById("b1");
 let kill = document.getElementById("k");
+let openHelp = document.getElementById("helpBtn");
+let closeHelp = document.getElementById("modal-closeBtn");
 
 let timerUpInterval;
 let audio = new Audio('sounds/ThemeTomate.mp3');
@@ -22,6 +24,8 @@ let audio = new Audio('sounds/ThemeTomate.mp3');
     ui.clearLogContent();
     actions.init("Mons'", 100, 10, true);
 
+    openHelp.addEventListener("click", actions.showHelp)
+    closeHelp.addEventListener("click", actions.hideHelp);
     show.addEventListener("click", actions.showMe);
     run.addEventListener("click", actions.run);
     fight.addEventListener("click", actions.fight);
@@ -30,10 +34,11 @@ let audio = new Audio('sounds/ThemeTomate.mp3');
     sleep.addEventListener("click", actions.sleep);
     newLife.addEventListener("click", start);
     kill.addEventListener("click", actions.killMe);
+
     ui.displayStatus();
 
-    // audio.loop = true;
-    // audio.play();
+    audio.loop = true;
+    audio.play();
 }
 
 //Every 12 seconds excecute a random activity

@@ -178,3 +178,11 @@ function isDead() {
         disableButtons();
     }
 }
+
+export function showHelp() {
+    document.getElementById("c-modal").style.display = "block";
+}
+
+export function hideHelp() {
+    document.getElementById("c-modal").style.display = "none";
+}

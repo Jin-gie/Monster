@@ -20,6 +20,15 @@ h1 {
     font-size: 4em;
 }
 
+h3 {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+ul {
+    margin: 0;
+}
+
 #container {
     position: absolute;
     bottom: 10%;
@@ -140,4 +149,62 @@ button:hover {
     bottom: 2px;
     right: 2px;
     font-size: .7rem;
+}
+
+
+#helpBtn {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+}
+
+#c-modal {
+    display: none;
+    position: fixed;
+    border-radius: 5px;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, .4);
+}
+
+#modal {
+    background-color: rgba(255, 255, 255, .95);
+    border: 1px solid #888;
+    width: 60%;
+    margin: 5rem auto;
+    height: 80%;
+    border-radius: 5px;
+    padding: 50px;
+}
+
+#modal-header {
+    font-size: 2rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+#modal-content {
+    text-align: justify;
+    margin-bottom: 50px;
+    height: 80%;
+    padding-right: 10px;
+    overflow-y: auto;
+}
+
+#modal-closeBtn {
+    background: none;
+    font-size: 3rem;
+    width: auto;
+    height: auto;
+}
+
+#modal-closeBtn:hover,
+#modal-closeBtn:focus {
+    cursor: pointer;
 }

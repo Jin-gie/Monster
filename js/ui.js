@@ -48,7 +48,7 @@ export function displayStatus() {
 
     // Change border width according to money
     let maxB = 30;
-    if (m.money < 61) {
+    if (m.money < 60) {
         let width = m.money * .5;
         mEl.style.border = `${width}px solid black`;
     }
