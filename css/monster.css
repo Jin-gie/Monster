@@ -5,7 +5,7 @@
 }
 
 body {
-    background-image: url("../images/landscape.png");
+    background-image: url("../images/48km_7zmv_201128.jpg");
     background-size: cover;
     background-position: center;
     min-height: 100vh;
@@ -27,6 +27,10 @@ h3 {
 
 ul {
     margin: 0;
+}
+
+button {
+    cursor: pointer;
 }
 
 #container {
@@ -156,6 +160,11 @@ button:hover {
     position: absolute;
     top: 1rem;
     left: 1rem;
+    background-color: #c07929;
+}
+
+#helpBtn:hover {
+    background-color: #ac641a;
 }
 
 #c-modal {
