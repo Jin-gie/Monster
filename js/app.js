@@ -12,6 +12,7 @@ let kill = document.getElementById("k");
 let openHelp = document.getElementById("helpBtn");
 let closeHelp = document.getElementById("modal-closeBtn");
 
+let actionsInterval;
 let timerUpInterval;
 let audio = new Audio('sounds/ThemeTomate.mp3');
 
@@ -22,7 +23,7 @@ let audio = new Audio('sounds/ThemeTomate.mp3');
  */
  export function start() {
     ui.clearLogContent();
-    actions.init("Mons'", 100, 10, true);
+    actions.init("Mons'", 100, 30, true);
 
     openHelp.addEventListener("click", actions.showHelp)
     closeHelp.addEventListener("click", actions.hideHelp);
@@ -37,12 +38,15 @@ let audio = new Audio('sounds/ThemeTomate.mp3');
 
     ui.displayStatus();
 
+
+    if (actionsInterval != undefined)
+        clearInterval(actionsInterval);
+    actionsInterval = setInterval(actions.random, 1000 * 12)
+
     audio.loop = true;
     audio.play();
 }
 
-//Every 12 seconds excecute a random activity
-setInterval(actions.random, 1000 * 12);
 
 
 // Update alive time

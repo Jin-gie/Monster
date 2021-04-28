@@ -159,12 +159,14 @@ let lactions = [
  * Kills the monster
  */
 export function killMe() {
-    life = 0;
-    awake = false;
-    dead = true;
-    log(`${name} was killed by a superior entity`);
-    displayStatus();
-    isDead();
+    if (!dead) {
+        life = 0;
+        awake = false;
+        dead = true;
+        log(`${name} was killed by a superior entity`);
+        displayStatus();
+        disableButtons();
+    }
 }
 
 /**
