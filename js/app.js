@@ -11,6 +11,7 @@ let newLife = document.getElementById("b1");
 let kill = document.getElementById("k");
 let openHelp = document.getElementById("helpBtn");
 let closeHelp = document.getElementById("modal-closeBtn");
+let musicBtn = document.getElementById("musicBtn");
 
 let actionsInterval;
 let timerUpInterval;
@@ -27,6 +28,7 @@ let audio = new Audio('sounds/ThemeTomate.mp3');
 
     openHelp.addEventListener("click", actions.showHelp)
     closeHelp.addEventListener("click", actions.hideHelp);
+    musicBtn.addEventListener("click", pausePlay);
     show.addEventListener("click", actions.showMe);
     run.addEventListener("click", actions.run);
     fight.addEventListener("click", actions.fight);
@@ -54,3 +56,10 @@ timerUpInterval = setInterval(() => {
     if (!actions.get().dead)
         ui.updateAlive();
 }, 1000);
+
+function pausePlay() {
+    if (audio.paused == true)
+        audio.play();
+    else
+        audio.pause();
+}
