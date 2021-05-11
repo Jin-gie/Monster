@@ -1,26 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
 
-* {
-    box-sizing: border-box;
-}
-
 body {
     background-image: url("../images/48km_7zmv_201128.jpg");
     background-size: cover;
     background-position: center;
     min-height: 100vh;
     font-family: "Poppins", sans-serif;
-    margin: 0;
 }
 
 h1 {
-    margin: 0;
     text-align: center;
     padding-top: 6rem;
     font-size: 4em;
+    font-weight: bold;
 }
 
-h3 {
+h4 {
     margin-top: 2.5rem;
     margin-bottom: 1rem;
 }
@@ -29,33 +24,8 @@ ul {
     margin: 0;
 }
 
-button {
-    cursor: pointer;
-}
-
-#container {
-    position: absolute;
-    bottom: 10%;
-    width: 100vw;
-    display: grid;
-    grid-template-columns: 2fr .5fr 400px .5fr 2fr;
-    grid-template-rows: 1fr .5fr;
-    grid-template-areas: 
-        ". bGen monster . log"
-        ". bActions bActions bActions .";
-}
-
-.monster {
-    display: inline-block;
-    vertical-align: top;
-    height: 250px;
-}
-
 #c-monster {
-    grid-area: monster;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin-bottom: 1rem;
 }
 
 #monster {
@@ -64,15 +34,15 @@ button {
     background-position: center;
     background-repeat: no-repeat;
     width: 250px;
+    height: 250px;
 }
 
 #log {
-    grid-area: log;
-    margin-left: 50px;
+    margin-bottom: 1rem;
 }
 
 #log-alive {
-    margin-top: .7rem;
+    margin-bottom: .7rem;
 }
 
 #actionbox {
@@ -80,12 +50,17 @@ button {
     align-self: center;
     background-color: rgba(134, 151, 161, .8);
     border: 1px solid rgb(128, 128, 128);
-    width: 400px;
+    height: 400px;
+    width: 450px;
     overflow-y: scroll;
 }
+
 #actionbox >p {
     margin: 0 ;
+    color: black;
 }
+
+
 ul#status {
     display: flex;
     flex-direction: row;
@@ -100,18 +75,6 @@ ul#status li {
     margin-left : 20px;
 }
 
-#c-buttons-actions {
-    grid-area: bActions;
-    margin-top: 2rem;
-    text-align: center;
-}
-
-#c-buttons-general {
-    grid-area: bGen;
-    justify-self: center;
-    align-self: center;
-}
-
 button {
     width: 75px;
     height: 40px;
@@ -119,7 +82,9 @@ button {
     border: 0;
     margin-right: 8px;
     border-radius: 5px;
-    font-size: 1rem;
+    font-size: .9rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
 }
 
 .button-disabled {
@@ -127,17 +92,12 @@ button {
     cursor: not-allowed;
 }
 
-#c-buttons-general > button {
-    display: block;
-    margin-top: 1rem;
-}
-
 button:hover {
     background-color: dodgerblue;
 }
 
 #footer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100vw;
     text-align: center;
@@ -149,12 +109,11 @@ button:hover {
 }
 
 #citation {
-    position: absolute;
+    position: fixed;
     bottom: 2px;
     right: 2px;
     font-size: .7rem;
 }
-
 
 #helpBtn {
     position: absolute;
@@ -166,6 +125,17 @@ button:hover {
 #helpBtn:hover {
     background-color: #ac641a;
 }
+
+
+#c-modal {
+    display: none;
+}
+
+#modal-closeBtn:hover,
+#modal-closeBtn:focus {
+    cursor: pointer;
+}
+
 
 #c-modal {
     display: none;
@@ -183,7 +153,6 @@ button:hover {
 #modal {
     background-color: rgba(255, 255, 255, .95);
     border: 1px solid #888;
-    width: 60%;
     margin: 5rem auto;
     height: 80%;
     border-radius: 5px;
@@ -193,8 +162,6 @@ button:hover {
 #modal-header {
     font-size: 2rem;
     font-weight: bold;
-    display: flex;
-    justify-content: space-between;
     margin-bottom: 2rem;
 }
 
@@ -211,9 +178,4 @@ button:hover {
     font-size: 3rem;
     width: auto;
     height: auto;
-}
-
-#modal-closeBtn:hover,
-#modal-closeBtn:focus {
-    cursor: pointer;
 }
